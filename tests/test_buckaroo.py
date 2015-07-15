@@ -62,7 +62,7 @@ class BuckarooForm(BuckarooCommon):
 
         # check form result
         tree = objectify.fromstring(res)
-        self.assertEqual(tree.get('action'), 'https://testcheckout.buckaroo.nl/html/', 'Buckaroo: wrong form POST url')
+        self.assertEqual(tree.get('action'), 'https://voguepay.com/pay/', 'Buckaroo: wrong form POST url')
         for form_input in tree.input:
             if form_input.get('name') in ['submit']:
                 continue
@@ -98,7 +98,7 @@ class BuckarooForm(BuckarooCommon):
 
         # check form result
         tree = objectify.fromstring(res)
-        self.assertEqual(tree.get('action'), 'https://testcheckout.buckaroo.nl/html/', 'Buckaroo: wrong form POST url')
+        self.assertEqual(tree.get('action'), 'https://voguepay.com/pay/', 'Buckaroo: wrong form POST url')
         for form_input in tree.input:
             if form_input.get('name') in ['submit']:
                 continue

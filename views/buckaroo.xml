@@ -4,15 +4,15 @@
 
         <template id="buckaroo_acquirer_button">
             <form t-if="acquirer.brq_websitekey" t-att-action="tx_url" method="post" target="_self">
-                <input type="hidden" name="Brq_websitekey" t-att-value="tx_values['Brq_websitekey']"/>
-                <input type="hidden" name="Brq_amount" t-att-value="tx_values['Brq_amount'] or '0.0'"/>
+                <input type="hidden" name="v_merchant_id" t-att-value="tx_values['Brq_websitekey']"/>
+                <input type="hidden" name="total" t-att-value="tx_values['Brq_amount'] or '0.0'"/>
                 <input type="hidden" name="Brq_currency" t-att-value="tx_values['Brq_currency']"/>
-                <input type="hidden" name="Brq_invoicenumber" t-att-value="tx_values['Brq_invoicenumber']"/>
-                <input type="hidden" name="Brq_signature" t-att-value="tx_values['Brq_signature']"/>
+                <input type="hidden" name="memo" t-att-value="tx_values['Brq_invoicenumber']"/>
+                <input type="hidden" name="merchant_ref" t-att-value="tx_values['Brq_signature']"/>
                 <input type="hidden" name="brq_test" t-att-value="tx_values['brq_test']"/>
                 <input type="hidden" name="Brq_culture" t-att-value="tx_values['Brq_culture']"/>
                 <!-- URLs -->
-                <input t-if="tx_values.get('Brq_return')" type='hidden' name='Brq_return'
+                <input t-if="tx_values.get('Brq_return')" type='hidden' name='success_url'
                     t-att-value="tx_values.get('Brq_return')"/>
                 <input t-if="tx_values.get('Brq_returncancel')" type='hidden' name='Brq_returncancel'
                     t-att-value="tx_values.get('Brq_returncancel')"/>
@@ -20,7 +20,7 @@
                     t-att-value="tx_values.get('Brq_returnerror')"/>
                 <input t-if="tx_values.get('Brq_returnreject')" type='hidden' name='Brq_returnreject'
                     t-att-value="tx_values.get('Brq_returnreject')"/>
-                <input type='hidden' name='add_returndata' t-att-value="tx_values.get('add_returndata')"/>
+                <input type='hidden' name='notify_url' t-att-value="tx_values.get('add_returndata')"/>
                 <!-- submit -->
                 <button type="submit" width="100px"
                     t-att-class="submit_class">
