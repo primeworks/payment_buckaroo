@@ -22,7 +22,7 @@
             <field name="inherit_id" ref="payment.transaction_form"/>
             <field name="arch" type="xml">
                 <xpath expr='//notebook' position='inside'>
-                    <page string="Buckaroo TX Details">
+                    <page string="VoguePay TX Details">
                         <group>
                             <field name="buckaroo_txnid"/>
                         </group>
